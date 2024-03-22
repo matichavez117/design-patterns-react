@@ -19,9 +19,11 @@ export default CompoundComponents;
 // Este patrón se utiliza cuando varios componentes trabajan juntos para tener un estado compartido y manejar la lógica juntos.
 
 // Un ejemplo de componentes compuestos se puede ver en HTML con los elementos <select> y <option>.
-// No hacen mucho por sí solos, pero juntos te permiten crear una experiencia completa. 
+// No hacen mucho por sí solos, pero juntos te permiten crear una experiencia completa.
 
 // Este tipo de componentes nos pueden servir, por ejemplo, para evitar hacer un solo componente y pasarle multiples propiedades.
 // De esta manera las propiedades se las podemos pasar directamente a cada parte del componente
 
 // Tambien podemos cambiarles los estilos individualmente sin tener que modificar el codigo interno del mismo.
+
+//Video tutorial: https://www.youtube.com/watch?v=fa-QSmdS7Hs
