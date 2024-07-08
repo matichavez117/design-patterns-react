@@ -7,6 +7,7 @@ import whitDataFetch from './components/HigherOrderComponents/withDataFetch'
 import PartiallyControlledComponent from './components/PartiallyControlledComponents/PartiallyControlledComponent'
 import PolymorphicComponent from './components/PolymorphicComponents/PolymorphicComponent'
 import './App.css'
+import ExtensibleStyles from './components/ExtensibleStyles/ExtensibleStyles'
 
 function App(props) {
   const buttonRef = useRef(null);
@@ -15,14 +16,11 @@ function App(props) {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <Typography variant='h4' sx={{ mb: 4 }}>Design patterns</Typography>
+      <Typography variant='h4' sx={{ mb: 4 }}>Design patterns in React</Typography>
       <Grid container justifyContent='center' spacing={1}>
         <Grid item xs={12} sm={6} md={6} xl={6}>
           <Button fullWidth variant='contained' sx={buttonStyles} onClick={() => setSection('compoundComponents')}>
@@ -44,7 +42,12 @@ function App(props) {
             Polymorphic Components
           </Button>
         </Grid>
-        <Grid item container justifyContent='center' alignItems='center' sx={{ height: 100, width: 200 }}>
+        <Grid item xs={12} sm={6} md={6} xl={6}>
+          <Button fullWidth variant='contained' sx={buttonStyles} onClick={() => setSection('extensibleStyles')}>
+            Extensible Styles
+          </Button>
+        </Grid>
+        <Grid item container justifyContent='center' alignItems='center' sx={{ height: 100, width: 200 }} xs={12} sm={12} md={12} xl={12}>
           {section === 'HigherOrderComponents' &&
             <Zoom in={true}>
               <Box>
@@ -58,7 +61,7 @@ function App(props) {
           }
           {section === 'partiallyControlledComponents' &&
             <Zoom in={true}>
-              <Box>
+              <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 <PartiallyControlledComponent ref={buttonRef} />
                 <Button
                   variant='contained'
@@ -87,6 +90,13 @@ function App(props) {
                 <PolymorphicComponent as='p'>
                   Esto es un parrafo
                 </PolymorphicComponent>
+              </Box>
+            </Zoom>
+          }
+          {section === 'extensibleStyles' &&
+            <Zoom in={true}>
+              <Box>
+                <ExtensibleStyles customStyle={{ color: 'red', borderColor: 'red' }} />
               </Box>
             </Zoom>
           }
