@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openship.io/openship.schema.json",
+  "framework": "vite",
+  "installCommand": "corepack enable && pnpm install",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "productionMode": "static"
+}
